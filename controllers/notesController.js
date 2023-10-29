@@ -1,5 +1,5 @@
 const Note = require('../models/Note')
-const User = require('../models/User')
+const User = require('../models/User') 
 const asyncHandler = require('express-async-handler')
 
 // @desc Get all notes 
@@ -43,8 +43,10 @@ const createNewNote = asyncHandler(async (req, res) => {
         return res.status(409).json({ message: 'Duplicate note title' })
     }
 
+    const noteObject = { user, title, text }
+
     // Create and store the new user 
-    const note = await Note.create({ user, title, text })
+    const note = await Note.create(noteObject)
 
     if (note) { // Created 
         return res.status(201).json({ message: 'New note created' })
