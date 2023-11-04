@@ -5,7 +5,13 @@ const express = require('express')
 const router = express.Router()
 
 // Import the usersController to handle user-related routes
-const usersController = require('../controllers/usersController');
+const usersController = require('../controllers/usersController')
+
+// Import the JWT verification middleware
+const verifyJWT = require('../middleware/verifyJWT')
+
+// Use the verifyJWT middleware for all routes defined under this router
+router.use(verifyJWT)
 
 // Define the routes for managing users
 router.route('/')

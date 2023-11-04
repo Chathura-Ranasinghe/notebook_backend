@@ -25,6 +25,7 @@ app.use(express.json())     // This middleware allows your Express application t
 
 app.use('/', express.static(path.join(__dirname, 'public')))    // This middleware serves static files from the 'public' directory.It makes files in the 'public' directory accessible to clients.
 app.use('/', require('./routes/root'))                          // This middleware requires and uses the 'root' route defined in './routes/root'.It handles incoming requests to the root URL ('/') by delegating to the 'root' route.
+app.use('/auth', require('./routes/authRoutes'))                // This middleware requires and uses the 'authRoutes' route defined in './auth/userRoutes'.It handles incoming requests to the root URL ('/auth') by delegating to the 'authRoutes' route.
 app.use('/users', require('./routes/userRoutes'))               // This middleware requires and uses the 'userRoutes' route defined in './routes/userRoutes'.It handles incoming requests to the root URL ('/users') by delegating to the 'userRoutes' route.
 app.use('/notes', require('./routes/noteRoutes'))               // This middleware requires and uses the 'noteRoutes' route defined in './routes/noteRoutes'.It handles incoming requests to the root URL ('/notes') by delegating to the 'noteRoutes' route.
 

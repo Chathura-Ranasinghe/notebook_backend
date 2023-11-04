@@ -5,7 +5,13 @@ const express = require('express')
 const router = express.Router()
 
 // Import the notesController to handle note-related routes
-const notesController = require('../controllers/notesController');
+const notesController = require('../controllers/notesController')
+
+// Import the JWT verification middleware
+const verifyJWT = require('../middleware/verifyJWT')
+
+// Use the verifyJWT middleware for all routes defined under this router
+router.use(verifyJWT)
 
 // Define the routes for managing notes
 router.route('/')
