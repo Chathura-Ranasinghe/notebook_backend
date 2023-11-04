@@ -1,11 +1,22 @@
+// Import the Express.js library
 const express = require('express')
+
+// Create a new instance of an Express router to define routes for this module
 const router = express.Router()
-const usersController = require('../controllers/usersController')
 
+// Import the usersController to handle user-related routes
+const usersController = require('../controllers/usersController');
+
+// Define the routes for managing users
 router.route('/')
+    // GET request to fetch all users
     .get(usersController.getAllUsers)
+    // POST request to create a new user
     .post(usersController.createNewUser)
+    // PATCH request to update a user's information
     .patch(usersController.updateUser)
-    .delete(usersController.deleteUser)
+    // DELETE request to delete a user
+    .delete(usersController.deleteUser);
 
-module.exports = router
+// Export the router to be used in other parts of the application
+module.exports = router;

@@ -1,11 +1,22 @@
+// Import the Express.js library
 const express = require('express')
+
+// Create a new instance of an Express router to define routes for this module
 const router = express.Router()
-const notesController = require('../controllers/notesController')
 
+// Import the notesController to handle note-related routes
+const notesController = require('../controllers/notesController');
+
+// Define the routes for managing notes
 router.route('/')
+    // GET request to fetch all notes
     .get(notesController.getAllNotes)
+    // POST request to create a new note
     .post(notesController.createNewNote)
+    // PATCH request to update a note's information
     .patch(notesController.updateNote)
-    .delete(notesController.deleteNote)
+    // DELETE request to delete a note
+    .delete(notesController.deleteNote);
 
-module.exports = router
+// Export the router to be used in other parts of the application
+module.exports = router;
