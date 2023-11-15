@@ -1,4 +1,5 @@
 require('dotenv').config();     // Import the 'dotenv', node.js module
+require('express-async-errors')
 
 const express = require('express')  // Import the Express.js library
 const app = express()               // Create an instance of Express application

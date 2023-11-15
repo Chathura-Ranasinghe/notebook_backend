@@ -16,10 +16,10 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     // Roles field, an array of strings with a default value of "Student."
-    roles: [{
-        type: String,
-        default: "Student"
-    }],
+    roles: {
+        type: [String],
+        default: ["Student"]
+    },
     // Active field, a boolean flag to indicate whether the user is active or not.
     active: {
         type: Boolean,
