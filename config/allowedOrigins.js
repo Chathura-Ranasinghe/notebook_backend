@@ -4,7 +4,7 @@
 const allowedOrigins = [
     
     // Add the origin where the React app is hosted, typically with the PORT (e.g., 'https://localhost:3000')
-    'http://localhost:3000',
+    'https://notebook-i39o.onrender.com',
     //'https://www.google.com',
     
     // Add other host URLs that are allowed to access your server (e.g., 'https://example.com')
